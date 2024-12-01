@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img name="slide" width="100%" height="auto" />
+    <script>
+      var i = 0; // start point
+      var images = [];
+      var time = 3000;
+
+      // image list
+      images[0] = "winter.jpg";
+      images[1] = "winter2.jpg";
+      console.log(images);
+
+      function changeImg() {
+        document.querySelector("img").src = images[i];
+        if (i < images.length - 1) {
+          i++;
+        } else {
+          i = 0;
+        }
+        setTimeout("changeImg()", time);
+      }
+
+      window.onload = changeImg;
+    </script>
+  </body>
+</html>
