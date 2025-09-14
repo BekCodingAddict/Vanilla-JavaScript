@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>간병비 영수증</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+      body {
+        font-family: "Malgun Gothic", sans-serif;
+        margin: 20px;
+        background: #f9f9f9;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #pdfContent {
+        width: 794px;
+        height: 1122px;
+        padding: 40px;
+        box-sizing: border-box;
+        background: white;
+        border: 1px solid #ccc;
+        position: relative;
+        overflow: hidden;
+        font-family: "Malgun Gothic", sans-serif;
+      }
+
+      .title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        outline: 4px solid gray;
+      }
+
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 0.8rem;
+      }
+
+      .section {
+        margin-top: 20px;
+      }
+
+      .signature {
+        text-align: right;
+        margin-top: 30px;
+        font-size: 16px;
+      }
+
+      .footer {
+        border: 1px solid #000;
+        margin-top: 30px;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .save-button {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .stamp {
+        width: 100px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="pdfContent">
+        <div class="title">간병비 영수증</div>
+
+        <table>
+          <!-- 내용 -->
+          <tr style="margin: 1px">
+            <th rowspan="2">내용</th>
+            <td colspan="3">간병 (8시간 / 주간 / 야간)</td>
+          </tr>
+          <tr>
+            <td colspan="3">1일 간병료 일금 85,000원 정</td>
+          </tr>
+
+          <!-- 기간 -->
+          <tr>
+            <th rowspan="2">기간</th>
+            <td colspan="3">2025년 03월 25일 부터</td>
+          </tr>
+          <tr>
+            <td colspan="3">2025년 04월 09일 까지</td>
+          </tr>
+
+          <!-- 병원 -->
+          <tr>
+            <th>병원</th>
+            <td colspan="3">아주대학교병원</td>
+          </tr>
+
+          <!-- 환자명 -->
+          <tr>
+            <th>환자명</th>
+            <td colspan="3">정석록</td>
+          </tr>
+
+          <!-- 간병인(수령인) -->
+          <tr>
+            <th>간병인(수령인)</th>
+            <td>홍순희</td>
+            <td>주민번호</td>
+            <td>540217-2330910</td>
+          </tr>
+
+          <!-- 금액 -->
+          <tr>
+            <th>금액</th>
+            <td colspan="2">일금 일백삼십육만원정</td>
+            <td><b>₩1,360,000</b></td>
+          </tr>
+
+          <tr>
+            <th style="padding: 3rem" colspan="4">
+              상기 금액은 간병비 대금으로 정히 영수함 2025년 04월 09일
+            </th>
+          </tr>
+
+          <tr>
+            <th rowspan="2">영수자</th>
+            <td colspan="2">간병인</td>
+            <td>홍순희</td>
+          </tr>
+
+          <tr style="position: relative">
+            <td colspan="3">
+              소개사업자 <br /><br />
+              사업자등록번호: 497-86-02884 <br /><br />
+              수상: 호.주식회사 헬조간병인협회 <br /><br />
+              대표: 이제중
+              <img
+                style="position: absolute; top: 7.5rem"
+                width="70px"
+                height="auto"
+                src="./pechat.png"
+                alt="pechat"
+              /><br /><br />
+              사업장소재지: 서울특별시 강서구 공항대로 213, 613호<br /><br />
+              전화번호: 1551-5513<br /><br />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <button class="save-button" onclick="generatePDF()">📄 Save PDF</button>
+    </div>
+
+    <script>
+      function generatePDF() {
+        const element = document.getElementById("pdfContent");
+
+        const opt = {
+          margin: 0,
+          filename: "receipt.pdf",
+          image: { type: "jpeg", quality: 1 },
+          html2canvas: {
+            scale: 2, // more DPI without bloat
+            useCORS: true,
+            logging: false,
+          },
+          jsPDF: {
+            unit: "pt",
+            format: "a4",
+            orientation: "portrait",
+          },
+        };
+
+        html2pdf().set(opt).from(element).save();
+      }
+    </script>
+  </body>
+</html>

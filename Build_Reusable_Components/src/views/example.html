@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Question Flow</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .question h3 {
+        margin-bottom: 8px;
+      }
+      .hidden {
+        display: none;
+      }
+      .btn {
+        padding: 10px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        border-radius: 4px;
+      }
+      .btn:disabled {
+        background-color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Questionnaire</h2>
+    <form id="question-form">
+      <div id="question-container"></div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+
+    <script>
+      const questionData = [
+        {
+          id: "q1",
+          text: "Do you have a driver's license?",
+          next: { yes: "q2", no: "q3" },
+        },
+        {
+          id: "q2",
+          text: "Have you driven in the past year?",
+          next: { yes: "end", no: "end" },
+        },
+        {
+          id: "q3",
+          text: "Are you planning to get a license soon?",
+          next: { yes: "end", no: "end" },
+        },
+      ];
+
+      let answers = {};
+      let currentId = "q1";
+
+      const container = document.getElementById("question-container");
+
+      function renderQuestion(id) {
+        container.innerHTML = ""; // Clear previous
+        const question = questionData.find((q) => q.id === id);
+        if (!question) return;
+
+        const div = document.createElement("div");
+        div.className = "question";
+
+        const label = document.createElement("h3");
+        label.textContent = question.text;
+        div.appendChild(label);
+
+        ["yes", "no"].forEach((value) => {
+          const label = document.createElement("label");
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = question.id;
+          radio.value = value;
+          radio.onchange = () => handleAnswer(question.id, value);
+          label.appendChild(radio);
+          label.appendChild(document.createTextNode(" " + value));
+          div.appendChild(label);
+          div.appendChild(document.createElement("br"));
+        });
+
+        container.appendChild(div);
+      }
+
+      function handleAnswer(questionId, answer) {
+        const previousPath = answers[questionId];
+        answers[questionId] = answer;
+
+        // Clear downstream answers if branch changed
+        if (previousPath && previousPath !== answer) {
+          const downstream = getBranchQuestions(questionId, previousPath);
+          downstream.forEach((qid) => delete answers[qid]);
+        }
+
+        const nextId = questionData.find((q) => q.id === questionId)?.next?.[
+          answer
+        ];
+        if (nextId && nextId !== "end") {
+          renderQuestion(nextId);
+        } else {
+          container.innerHTML = "<p>Thank you! You completed the form.</p>";
+          console.log("Submitted Answers:", answers);
+        }
+      }
+
+      function getBranchQuestions(startId, answer) {
+        let qid = questionData.find((q) => q.id === startId)?.next?.[answer];
+        const branch = [];
+        while (qid && qid !== "end") {
+          branch.push(qid);
+          qid = questionData.find((q) => q.id === qid)?.next?.yes; // assuming both yes/no go same depth
+        }
+        return branch;
+      }
+
+      document.getElementById("question-form").onsubmit = (e) => {
+        e.preventDefault();
+        alert("Form submitted! Check console for data.");
+        console.log("Final Answers:", answers);
+      };
+
+      // Initial render
+      renderQuestion(currentId);
+    </script>
+  </body>
+</html>
