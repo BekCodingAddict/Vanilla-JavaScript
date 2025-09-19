@@ -1,0 +1,50 @@
+:root {
+	/* Button Primary Colors */
+	--buttonPrimaryNormal: #3b82f6;
+	--buttonPrimaryHover: #2563eb;
+	--buttonPrimaryPressed: #1d4ed8;
+
+	/* Button Disabled Colors */
+	--buttonDisabledBg: #e5e7eb;
+	--gray500: #6b7280;
+
+	/* White */
+	--white: #ffffff;
+
+	/* Button Secondary Colors */
+	--buttonSecondaryNormal: #f3f4f6;
+	--buttonSecondaryHover: #e5e7eb;
+	--buttonSecondaryPressed: #d1d5db;
+	--buttonSecondaryText: #111827;
+
+	/* Button Danger Colors */
+	--buttonDangerNormal: #ef4444;
+	--buttonDangerHover: #dc2626;
+	--buttonDangerPressed: #b91c1c;
+
+	/* Button Success Colors */
+	--buttonSuccessNormal: #10b981;
+	--buttonSuccessHover: #059669;
+	--buttonSuccessPressed: #047857;
+
+	/* Button Warning Colors */
+	--buttonWarningNormal: #f59e0b;
+	--buttonWarningHover: #d97706;
+	--buttonWarningPressed: #b45309;
+	--buttonWarningText: #ffffff;
+
+	/* Button Sizes */
+	--buttonPaddingSmall: 0.25rem 0.75rem;
+	--buttonPaddingMedium: 0.5rem 1rem;
+	--buttonPaddingLarge: 0.75rem 1.5rem;
+
+	--buttonFontSizeSmall: 0.875rem;
+	--buttonFontSizeMedium: 1rem;
+	--buttonFontSizeLarge: 1.125rem;
+
+	/* Border Radius */
+	--buttonBorderRadius: 0.375rem;
+
+	/* Transitions */
+	--buttonTransition: all 0.2s ease-in-out;
+}

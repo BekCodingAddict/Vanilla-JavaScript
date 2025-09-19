@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test Form Submission</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 2rem;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		form {
+			border: 1px solid #ccc;
+			padding: 2rem;
+			border-radius: 8px;
+			margin-bottom: 2rem;
+		}
+
+		input {
+			width: 100%;
+			padding: 0.5rem;
+			margin: 0.5rem 0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		.button-group {
+			display: flex;
+			gap: 1rem;
+			margin-top: 1rem;
+		}
+
+		.status {
+			padding: 1rem;
+			background: #e7f3ff;
+			border: 1px solid #b3d9ff;
+			border-radius: 4px;
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Test Custom Button Form Submission</h1>
+
+	<form id="testForm">
+		<div>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+		</div>
+		<div>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+		</div>
+
+		<div class="button-group">
+			<brie-button type="submit" variant="primary">Submit</brie-button>
+			<brie-button type="reset" variant="secondary">Reset</brie-button>
+			<button type="button" onclick="testRegularButton()">Regular Button</button>
+		</div>
+	</form>
+
+	<div id="status" class="status" style="display: none;"></div>
+
+	<script type="module" src="src/components/BrieButtons.js"></script>
+
+	<script>
+		// Handle form submission
+		document.getElementById('testForm').addEventListener('submit', function (event) {
+			event.preventDefault(); // Prevent actual form submission for testing
+
+			const formData = new FormData(event.target);
+			const email = formData.get('email');
+			const password = formData.get('password');
+
+			showStatus(`Form submitted successfully! Email: ${email}, Password: ${password}`);
+			console.log('Form submitted with:', { email, password });
+		});
+
+		// Test regular button
+		function testRegularButton() {
+			showStatus('Regular button clicked!');
+		}
+
+		// Show status messages
+		function showStatus(message) {
+			const status = document.getElementById('status');
+			status.textContent = message;
+			status.style.display = 'block';
+
+			setTimeout(() => {
+				status.style.display = 'none';
+			}, 3000);
+		}
+
+		// Listen for custom button events
+		document.addEventListener('button-click', function (event) {
+			console.log('Custom button clicked:', event.detail);
+		});
+	</script>
+</body>
+
+</html>

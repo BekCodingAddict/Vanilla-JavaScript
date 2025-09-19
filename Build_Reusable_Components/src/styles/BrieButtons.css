@@ -1,0 +1,598 @@
+:root {
+	/* basic colors  */
+	--black: #000;
+	--white: #fff;
+	--gray10: #f8f8f8;
+	--gray20: #f4f4f4;
+	--gray30: #eaedf4;
+	--gray40: #d7d7d7;
+	--gray50: #b4c0d3;
+	--gray60: #a0a0a0;
+	--gray70: #8491a7;
+	--gray80: #666666;
+	--gray90: #5c667b;
+	--gray100: #49526a;
+	--gray110: #373f57;
+	--gray120: #292e41;
+	--gray130: #151822;
+	--orange: #f1af2c;
+	--blue30: #cbe1fa;
+	--blue70: #71a7ef;
+	--blue90: #3d89ec;
+
+	/* app theme colors */
+	--colorPrimary: #5d5a88;
+	--colorPrimaryLight: #94d1f9;
+	--colorSecondary: #23a6f0;
+	/* --colorSecondaryLight: #f0a8ae; */
+
+	/* text colors */
+	--textPrimary: var(--gray130);
+	--textSecondary: var(--gray110);
+	--textTertiary: var(--gray70);
+	--textQuaternary: var(--gray40);
+
+	/* border colors */
+	--borderPrimary: var(--colorPrimary);
+	--borderSecondary: var(--gray40);
+	--borderGrayDark: var(--gray90);
+	--borderGrayLight: var(--gray40);
+
+	/* checkbox colors */
+	--checkboxDisableBg: var(--white);
+	--checkboxEnableBg: var(--colorPrimary);
+	--checkboxBorder: var(--borderGrayDark);
+	--checkboxIcon: var(--white);
+
+	/* button colors */
+	--buttonPrimaryBg: var(--colorPrimary);
+	--buttonPrimaryText: var(--white);
+	--buttonSecondaryBg: var(--colorSecondary);
+	--buttonSecondaryText: var(--white);
+	--buttonDisabledBg: var(--gray40);
+	--buttonDisabledText: var(--gray80);
+
+	/* input colors */
+	--inputBorder: var(--borderGrayLight);
+	--inputPlaceHolder: var(--textTertiary);
+	--labelText: var(--textPrimary);
+
+	/* COLORS  */
+	/* --colorPrimary: #5d5a88; */
+	--colorGray: #dadada;
+	--colorGrayLight: #f2f4f8;
+	/* --btnPrimaryBg: #5d5a88;
+	--btnPrimaryText: #ffffff;
+	--btnSecondaryBg: #23a6f0;
+	--btnSecondaryText: #ffffff;
+	--btnDisabledBg: #dadada;
+	--btnDisabledText: #707070; */
+	--btnEnabledBg: #5d5a88;
+	--btnEnabledText: #ffffff;
+	--outlineBtnText: #5d5a88;
+	--outlineBtnBorder: #d4d2e3;
+	--outlineBtnBg: #ffffff;
+	--floatingBtnBg: #23a6f0;
+	--floatingBtnText: #ffffff;
+
+	--textPrimaryBg: #f2f2f2;
+	/* --borderGray: #d4d2e3;
+	--borderPrimary: #e4e5e8;
+	--borderSecondary: #d9d9d9; */
+	--linkPrimary: #001d6c;
+	--linkSecondary: #9a9a9a;
+	/* --inputBorder: #dadada;
+	--inputPlaceHolder: #b5b5b5;
+	--labelText: #21272a; */
+	--primaryHeadingText: #313131;
+	--radioDisable: #5c667b;
+	--radioEnable: #5785ff;
+	--radioHover: #eaedf4;
+	/* --checkboxDisableBg: #ffffff;
+	--checkboxEnableBg: #5785ff;
+	--checkboxBorder: #5c667b;
+	--checkboxIcon: #ffffff; */
+
+	--modalBg: #ffffff;
+	--bannerBg: #eeeeee;
+	--outlineText: #d9d9d9;
+	--emphasisText: #16c098;
+	--hashTagText: #23a6f0;
+	--dividerPrimary: #dadada;
+	--optionDefaultText: #d9d9d9;
+	--essential: #ff6600;
+	--deleteAccountText: #23a6f0;
+	--tableHeadBg: #f2f4f8;
+
+	/* FONT SIZES Legacy */
+	--font-size-primary-heading: 4.8rem;
+	--font-size-secondary-heading: 2.4rem;
+	--font-size-tertiary-heading: 1.8rem;
+	--font-size-tertiary: 1.8rem;
+	--font-size-extra-large: 2.4rem;
+	--font-size-large: 2rem;
+	--font-size-medium-large: 1.8rem;
+	--font-size-medium: 1.6rem;
+	--font-size-medium-small: 1.4rem;
+	--font-size-small: 1.2rem;
+
+	/* font sizes */
+	--font_primary_heading: 4.8rem;
+	--font_secondary_heading: 3.6rem;
+	--font_tertiary_heading: 2.4rem;
+	--font_extra_large: 3.6rem;
+	--font_large: 2.4rem;
+	--font_medium_large: 1.8rem;
+	--font_medium: 1.6rem;
+	--font_medium_small: 1.4rem;
+	--font_small: 1.2rem;
+	--font_extra_small: 1rem;
+
+	/* basic colors  */
+	--black: #000;
+	--white: #fff;
+
+	/* nuetral  */
+	--gray50: #f8f8f8;
+	--gray100: #f0f0f0;
+	--gray200: #e4e4e4;
+	--gray300: #d8d8d8;
+	--gray400: #c6c6c6;
+	--gray500: #8e8e8e;
+	--gray600: #717171;
+	--gray700: #555555;
+	--gray800: #2d2d2d;
+	--gray900: #1d1d1d;
+
+	/*primary*/
+	--primary50: #eff5ff;
+	--primary100: #d3e1fb;
+	--primary200: #a7c4f7;
+	--primary300: #7ca6f3;
+	--primary400: #5089ef;
+	--primary500: #246beb;
+	--primary600: #1d56bc;
+	--primary700: #16408d;
+	--primary800: #0e2b5e;
+	--primary900: #07152f;
+
+	/*secondary*/
+	--secondary50: #edf1f5;
+	--secondary100: #cdd7e4;
+	--secondary200: #b4c4d6;
+	--secondary300: #99b0cb;
+	--secondary400: #2a5c96;
+	--secondary500: #003675;
+	--secondary600: #002b5e;
+	--secondary700: #002046;
+	--secondary800: #00162f;
+	--secondary900: #000b17;
+
+	/* text colors */
+	--textTitle: var(--gray900);
+	--textBody: var(--gray700);
+	--textDisabled: var(--gray500);
+
+	/* back ground colors */
+	--backgroundBase: var(--white);
+	--backgroundLayer1: var(--gray50);
+	--backgroundLayer2: var(--secondary50);
+
+	/* border colors */
+	--borderActive: var(--primary500);
+	--borderNormal: var(--gray600);
+	--borderContents: var(--gray400);
+
+	/* checkbox colors */
+
+	/* button colors */
+	--buttonPrimaryNormal: var(--primary500);
+	--buttonPrimaryHover: var(--primary600);
+	--buttonPrimaryPressed: var(--primary700);
+	--buttonPrimaryDisabled: var(--gray200);
+	/*secondary, gray,text*/
+
+	/* input colors */
+
+	/* COLORS  */
+	--colorDangerSurface: #feecf0;
+	--colorDangerBorder: #fcd4de;
+	--colorDangerBase: #eb003b;
+	--colorDangerText: #d50136;
+
+	--colorInformationSurface: #e9f0ff;
+	--colorInformationBorder: #d4e1ff;
+	--colorInformationBase: #2768ff;
+	--colorInformationTextr: #1f53cc;
+
+	/* FONT SIZES */
+	--font-heading-L: 5rem;
+	--font-heading-M: 4rem;
+	--font-heading-S: 3.2rem;
+
+	--font-title-XXL: 3.2rem;
+	--font-title-XL: 2.5rem;
+	--font-title-L: 2.1rem;
+	--font-title-M: 1.9rem;
+	--font-title-S: 1.7rem;
+	--font-title-XS: 1.5rem;
+
+	--font-body-M: 1.7rem;
+	--font-body-L: 1.9rem;
+
+	--font-lable-L: 1.9rem;
+	--font-lable-M: 1.7rem;
+	--font-lable-S: 1.5rem;
+	--font-lable-XS: 1.5rem;
+
+	/* spacing system */
+}
+
+.btn_primary {
+	border: none;
+	background-color: var(--buttonPrimaryNormal);
+	font-weight: 400;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_primary:hover {
+	border: none;
+	background-color: var(--buttonPrimaryHover);
+	font-weight: 400;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_primary:active {
+	border: none;
+	background-color: var(--buttonPrimaryPressed);
+	font-weight: 400;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_primary:disabled {
+	border: none;
+	background-color: var(--buttonDisabledBg);
+	font-weight: 400;
+	color: var(--gray500);
+	cursor: pointer;
+}
+
+.btn_secondary {
+	/* border-style: none; */
+	/* border: none; */
+	background-color: var(--buttonSecondaryNormal);
+	border: 0.1rem solid var(--primary500);
+	font-weight: 400;
+	color: var(--primary600);
+	cursor: pointer;
+}
+
+.btn_secondary:hover {
+	background-color: var(--buttonSecondaryHover);
+	border: 0.1rem solid var(--primary500);
+	font-weight: 400;
+	color: var(--primary600);
+	cursor: pointer;
+}
+
+.btn_secondary:active {
+	background-color: var(--buttonSecondaryPressed);
+	border: 0.1rem solid var(--primary700);
+	font-weight: 400;
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_secondary:disabled {
+	background-color: var(--buttonSecondaryDisabled);
+	border: 0.1rem solid var(--primary500);
+	font-weight: 400;
+	color: var(--gray500);
+	cursor: pointer;
+}
+
+.btn_neutral {
+	background-color: var(--white);
+	border: 0.1rem solid var(--gray900);
+	font-weight: 400;
+	color: var(--gray900);
+	cursor: pointer;
+}
+/*element gray800*/
+
+.btn_neutral:hover {
+	background-color: var(--gray50);
+	border: 0.1rem solid var(--gray900);
+	font-weight: 400;
+	color: var(--gray900);
+	cursor: pointer;
+}
+/*element gray800*/
+
+.btn_neutral:active {
+	background-color: var(--gray100);
+	border: 0.1rem solid var(--gray900);
+	font-weight: 400;
+	color: var(--gray900);
+	cursor: pointer;
+}
+/*element gray800*/
+
+.btn_neutral:disabled {
+	background-color: var(--gray300);
+	border: 0.1rem solid var(--gray400);
+	font-weight: 400;
+	color: var(--gray600);
+	cursor: pointer;
+} /*element gray500*/
+
+.btn_text {
+	color: var(--buttonTextTextNColor);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
+} /*element gray800*/
+
+.btn_text:hover {
+	color: var(--buttonTextTextNColor);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: var(--buttonTextHoverColor);
+}
+
+.btn_text:active {
+	color: var(--buttonTextTextNColor);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: var(--buttonTextPressedColor);
+}
+
+.btn_text:disabled {
+	color: var(--gray500);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: var(--white);
+}
+
+.btn_text_unactive {
+	color: var(--gray500);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: rgba(255, 255, 255, 0);
+}
+
+.btn_text_unactive:hover {
+	color: var(--buttonTextTextNColor);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: var(--buttonTextHoverColor);
+}
+
+.btn_text_unactive:active {
+	color: var(--buttonTextTextNColor);
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: var(--buttonTextPressedColor);
+}
+
+.btn_radius_2 {
+	border-radius: 0.2rem;
+}
+
+.btn_radius_4 {
+	border-radius: 0.4rem;
+}
+
+.btn_radius_8 {
+	border-radius: 0.8rem;
+}
+
+.btn_radius_12 {
+	border-radius: 1.2rem;
+}
+
+.btn_radius_16 {
+	border-radius: 1.6rem;
+}
+
+.btn_radius_24 {
+	border-radius: 2.4rem;
+}
+
+.btn_radius_999 {
+	border-radius: 999px;
+}
+
+/* [btn size] */
+.btn_size_XL {
+	/* height: 6.4rem; */
+	padding: 2.25rem 2.4rem;
+	font-size: var(--font-lable-L);
+	text-align: center;
+}
+
+.btn_size_L {
+	/* height: 5.6rem; */
+	padding: 1.85rem 2rem;
+	font-size: var(--font-lable-L);
+	text-align: center;
+}
+
+.btn_size_M {
+	/* height: 4.8rem; */
+	padding: 1.55rem 1.6rem;
+	font-size: var(--font-lable-M);
+	text-align: center;
+}
+
+.btn_size_S {
+	/* height: 4rem; */
+	padding: 1.65rem 1.2rem;
+	font-size: var(--font-lable-S);
+	text-align: center;
+}
+
+.btn_size_XS {
+	/* height: 3.2rem; */
+	padding: 0.85rem 1rem;
+	font-size: var(--font-lable-S);
+	text-align: center;
+}
+
+.btn_text_size_L {
+	height: 4rem;
+	padding: 1.05rem 0.2rem;
+	font-size: var(--font-lable-L);
+	text-align: center;
+}
+
+.btn_text_size_M {
+	/* height: 3.2rem; */
+	padding: 0.75rem 0.2rem;
+	font-size: var(--font-lable-M);
+	text-align: center;
+}
+
+.btn_text_size_S {
+	/* height: 2.4rem; */
+	padding: 0.45rem 0.2rem;
+	font-size: var(--font-lable-S);
+	text-align: center;
+}
+
+.btn_text_size_XS {
+	/* height: 2rem; */
+	padding: 0.25rem 0.2rem;
+	font-size: var(--font-lable-S);
+	text-align: center;
+}
+
+.btn_rounded {
+	/* display: block;
+  width: 100%; */
+	cursor: pointer;
+	background-color: #5d5a88;
+	padding: 1rem 2rem;
+	font-family: inherit;
+	color: #ffffff;
+	font-size: 1.6rem;
+	border: none;
+	border-radius: 10rem;
+}
+
+.btn_rounded:hover {
+	background-color: var(--primary600);
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_rounded:active {
+	background-color: var(--primary700);
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_rounded:disabled {
+	background-color: var(--gray200);
+	color: var(--gray500);
+	cursor: pointer;
+}
+
+.btn_floating {
+	position: fixed;
+	z-index: 100;
+	bottom: 4rem;
+	right: 4rem;
+	padding: 2rem 3.2rem;
+	background-color: var(--primary500);
+	color: var(--white);
+	border: none;
+	font-size: var(--font-lable-M);
+	border-radius: 999rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	cursor: pointer;
+}
+
+.btn_floating:hover {
+	background-color: var(--primary600);
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_floating:active {
+	background-color: var(--primary700);
+	color: var(--white);
+	cursor: pointer;
+}
+
+.btn_floating:disabled {
+	background-color: var(--gray200);
+	color: var(--gray500);
+	cursor: pointer;
+}
+
+.btn_floating:disabled {
+	background-color: var(--gray200);
+	color: var(--gray500);
+	cursor: pointer;
+}
+
+.btn_outline {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 999rem;
+	border: 1px solid var(--borderContents);
+	padding: 2rem 3.2rem;
+	cursor: pointer;
+	background-color: var(--white);
+}
+
+.btn_outline:hover {
+	background-color: var(--gray50);
+	color: var(--gray900);
+	border: 1px solid var(--borderContents);
+	cursor: pointer;
+}
+
+.btn_outline:active {
+	background-color: var(--gray100);
+	color: var(--gray900);
+	cursor: pointer;
+	border: 1px solid var(--borderContents);
+}
+
+.btn_outline:disabled {
+	background-color: var(--gray200);
+	color: var(--gray500);
+	cursor: pointer;
+}
+
+.btn_outline:disabled {
+	background-color: var(--gray200);
+	color: var(--gray500);
+	cursor: pointer;
+	border: 1px solid var(--borderContents);
+}
+
+.w-full {
+	width: 100%;
+}
+
+.w-\[50\%\] {
+	width: 50%;
+}
+
+.w-\[25\%\] {
+	width: 25%;
+}

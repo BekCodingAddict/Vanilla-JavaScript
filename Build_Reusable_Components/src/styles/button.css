@@ -1,0 +1,202 @@
+@import url("./variables.css");
+
+/* Base Button Styles */
+.btn_primary,
+.btn_secondary,
+.btn_danger,
+.btn_success,
+.btn_warning {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--buttonPaddingMedium);
+	font-size: var(--buttonFontSizeMedium);
+	font-weight: 400;
+	border: none;
+	border-radius: var(--buttonBorderRadius);
+	cursor: pointer;
+	transition: var(--buttonTransition);
+	text-decoration: none;
+	user-select: none;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+}
+
+.btn_primary:focus,
+.btn_secondary:focus,
+.btn_danger:focus,
+.btn_success:focus,
+.btn_warning:focus {
+	outline: 2px solid var(--buttonPrimaryNormal);
+	outline-offset: 2px;
+}
+
+.btn_primary:active,
+.btn_secondary:active,
+.btn_danger:active,
+.btn_success:active,
+.btn_warning:active {
+	transform: scale(0.97);
+}
+
+/* Primary Button */
+.btn_primary {
+	background-color: var(--buttonPrimaryNormal);
+	color: var(--white);
+}
+
+.btn_primary:hover {
+	background-color: var(--buttonPrimaryHover);
+}
+
+.btn_primary:active {
+	background-color: var(--buttonPrimaryPressed);
+}
+
+.btn_primary:disabled {
+	background-color: var(--buttonDisabledBg);
+	color: var(--gray500);
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Secondary Button */
+.btn_secondary {
+	background-color: var(--buttonSecondaryNormal);
+	color: var(--buttonSecondaryText);
+	border: 1px solid var(--buttonSecondaryHover);
+}
+
+.btn_secondary:hover {
+	background-color: var(--buttonSecondaryHover);
+}
+
+.btn_secondary:active {
+	background-color: var(--buttonSecondaryPressed);
+}
+
+.btn_secondary:disabled {
+	background-color: var(--buttonDisabledBg);
+	color: var(--gray500);
+	border-color: var(--buttonDisabledBg);
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Danger Button */
+.btn_danger {
+	background-color: var(--buttonDangerNormal);
+	color: var(--white);
+}
+
+.btn_danger:hover {
+	background-color: var(--buttonDangerHover);
+}
+
+.btn_danger:active {
+	background-color: var(--buttonDangerPressed);
+}
+
+.btn_danger:disabled {
+	background-color: var(--buttonDisabledBg);
+	color: var(--gray500);
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Success Button */
+.btn_success {
+	background-color: var(--buttonSuccessNormal);
+	color: var(--white);
+}
+
+.btn_success:hover {
+	background-color: var(--buttonSuccessHover);
+}
+
+.btn_success:active {
+	background-color: var(--buttonSuccessPressed);
+}
+
+.btn_success:disabled {
+	background-color: var(--buttonDisabledBg);
+	color: var(--gray500);
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Warning Button */
+.btn_warning {
+	background-color: var(--buttonWarningNormal);
+	color: var(--buttonWarningText);
+}
+
+.btn_warning:hover {
+	background-color: var(--buttonWarningHover);
+}
+
+.btn_warning:active {
+	background-color: var(--buttonWarningPressed);
+}
+
+.btn_warning:disabled {
+	background-color: var(--buttonDisabledBg);
+	color: var(--gray500);
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Button Sizes */
+.btn_small {
+	padding: var(--buttonPaddingSmall);
+	font-size: var(--buttonFontSizeSmall);
+}
+
+.btn_large {
+	padding: var(--buttonPaddingLarge);
+	font-size: var(--buttonFontSizeLarge);
+}
+
+/* Button States */
+.btn_loading {
+	position: relative;
+	color: transparent;
+}
+
+.btn_loading::after {
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 50%;
+	left: 50%;
+	margin-left: -8px;
+	margin-top: -8px;
+	border: 2px solid transparent;
+	border-top-color: currentColor;
+	border-radius: 50%;
+	animation: button-spin 1s linear infinite;
+}
+
+@keyframes button-spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+/* Icon Support */
+.btn_icon {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.btn_icon svg {
+	width: 1rem;
+	height: 1rem;
+	fill: currentColor;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reusable UI Components</title>
+	<link rel="stylesheet" href="src/styles/variables.css">
+	<link rel="stylesheet" href="src/styles/button.css">
+	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			line-height: 1.6;
+			margin: 0;
+			padding: 2rem;
+			background-color: #f8fafc;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			color: #1f2937;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		.demo-section {
+			background: white;
+			padding: 2rem;
+			margin-bottom: 2rem;
+			border-radius: 0.5rem;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		.button-group {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin: 1rem 0;
+		}
+
+		.code-block {
+			background: #f1f5f9;
+			padding: 1rem;
+			border-radius: 0.375rem;
+			font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+			font-size: 0.875rem;
+			overflow-x: auto;
+			margin: 1rem 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>🎨 Reusable UI Components</h1>
+		<p style="text-align: center; color: #6b7280; margin-bottom: 3rem;">
+			Building React-like components with Vanilla JavaScript and Web Components
+		</p>
+
+		<div class="demo-section">
+			<h2>Quick Demo</h2>
+			<p>Here are some examples of the reusable button components:</p>
+
+			<div class="button-group">
+
+				<custom-button id="primary1" variant="primary">Primary</custom-button>
+				<custom-button variant="secondary">Secondary</custom-button>
+				<custom-button variant="danger">Danger</custom-button>
+				<custom-button variant="success">Success</custom-button>
+				<custom-button variant="warning">Warning</custom-button>
+			</div>
+
+			<div class="button-group">
+				<custom-button variant="primary" size="small">Small</custom-button>
+				<custom-button variant="primary" size="medium">Medium</custom-button>
+				<custom-button variant="primary" size="large">Large</custom-button>
+			</div>
+
+			<div class="button-group">
+				<custom-button variant="primary">Normal</custom-button>
+				<custom-button variant="primary" disabled>Disabled</custom-button>
+				<custom-button variant="primary" loading>Loading</custom-button>
+			</div>
+
+			<div class="code-block">
+				&lt;!-- Basic usage --&gt; <br>
+				&lt;custom-button variant="primary"&gt;Click me&lt;/custom-button&gt; <br>
+
+				&lt;!-- With size --&gt; <br>
+				&lt;custom-button variant="secondary" size="large"&gt;Large Button&lt;/custom-button&gt; <br>
+
+				&lt;!-- With states --&gt; <br>
+				&lt;custom-button variant="danger" disabled&gt;Disabled&lt;/custom-button&gt; <br>
+				&lt;custom-button variant="success" loading&gt;Loading...&lt;/custom-button&gt; <br>
+			</div>
+
+			<p>
+				<strong>📖 <a href="example.html" style="color: #3b82f6; text-decoration: none;">View Complete Examples
+						→</a></strong>
+			</p>
+		</div>
+
+		<div class="demo-section">
+			<h2>Brie Reusable Button Components</h2>
+			<p>Here are some examples of the reusable button components:</p>
+
+			<div class="button-group">
+
+				<brie-button variant="primary">Primary</brie-button>
+				<brie-button variant="secondary">Secondary</brie-button>
+				<brie-button variant="neutral">Neutral</brie-button>
+				<brie-button variant="text">Text</brie-button>
+				<brie-button variant="rounded">Rounded</brie-button>
+				<brie-button variant="floating">Floating</brie-button>
+				<brie-button variant="outline">Outline</brie-button>
+			</div>
+
+			<div class="button-group">
+				<custom-button variant="primary" size="XL">XL</custom-button>
+				<custom-button variant="primary" size="L">L</custom-button>
+				<custom-button variant="primary" size="M">M</custom-button>
+				<custom-button variant="primary" size="S">S</custom-button>
+				<custom-button variant="primary" size="XS">XS</custom-button>
+
+			</div>
+
+			<div class="button-group">
+				<custom-button variant="primary">Normal</custom-button>
+				<custom-button variant="primary" disabled>Disabled</custom-button>
+				<custom-button variant="primary" loading>Loading</custom-button>
+			</div>
+
+			<div class="code-block">
+				&lt;!-- Basic usage --&gt; <br>
+				&lt;custom-button variant="primary"&gt;Click me&lt;/custom-button&gt; <br>
+
+				&lt;!-- With size --&gt; <br>
+				&lt;custom-button variant="secondary" size="large"&gt;Large Button&lt;/custom-button&gt; <br>
+
+				&lt;!-- With states --&gt; <br>
+				&lt;custom-button variant="danger" disabled&gt;Disabled&lt;/custom-button&gt; <br>
+				&lt;custom-button variant="success" loading&gt;Loading...&lt;/custom-button&gt; <br>
+			</div>
+
+			<p>
+				<strong>📖 <a href="brie_examples.html" style="color: #3b82f6; text-decoration: none;">View Complete
+						Examples
+						→</a></strong>
+			</p>
+		</div>
+
+		<div class="demo-section">
+			<h2>Features</h2>
+			<ul>
+				<li>✅ <strong>Custom Elements:</strong> Native Web Components</li>
+				<li>✅ <strong>Shadow DOM:</strong> Encapsulated styles</li>
+				<li>✅ <strong>Multiple Variants:</strong> Primary, Secondary, Danger, Success, Warning</li>
+				<li>✅ <strong>Multiple Sizes:</strong> Small, Medium, Large</li>
+				<li>✅ <strong>States:</strong> Normal, Disabled, Loading</li>
+				<li>✅ <strong>Accessibility:</strong> Keyboard navigation, ARIA attributes</li>
+				<li>✅ <strong>Event Handling:</strong> Custom events and onclick support</li>
+				<li>✅ <strong>Programmatic Control:</strong> Methods to change state</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Load the component -->
+	<script type="module" src="src/components/Button.js"></script>
+	<script type="module" src="src/components/BrieButtons.js"></script>
+</body>
+
+</html>

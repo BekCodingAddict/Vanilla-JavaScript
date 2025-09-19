@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reusable UI Components - Button Examples</title>
+	<link rel="stylesheet" href="src/styles/variables.css">
+	<link rel="stylesheet" href="src/styles/button.css">
+	<style>
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			line-height: 1.6;
+			margin: 0;
+			padding: 2rem;
+			background-color: #f8fafc;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			color: #1f2937;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		.section {
+			background: white;
+			padding: 2rem;
+			margin-bottom: 2rem;
+			border-radius: 0.5rem;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		.section h2 {
+			color: #374151;
+			margin-top: 0;
+			margin-bottom: 1rem;
+		}
+
+		.button-group {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.button-group.vertical {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.code-block {
+			background: #f1f5f9;
+			padding: 1rem;
+			border-radius: 0.375rem;
+			font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+			font-size: 0.875rem;
+			overflow-x: auto;
+			margin: 1rem 0;
+		}
+
+		.interactive-demo {
+			border: 2px dashed #d1d5db;
+			padding: 1rem;
+			border-radius: 0.5rem;
+			margin: 1rem 0;
+		}
+
+		.status {
+			margin-top: 1rem;
+			padding: 0.75rem;
+			background: #dbeafe;
+			border: 1px solid #93c5fd;
+			border-radius: 0.375rem;
+			color: #1e40af;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>🎨 Reusable UI Components</h1>
+		<p style="text-align: center; color: #6b7280; margin-bottom: 3rem;">
+			Building React-like components with Vanilla JavaScript and Web Components
+		</p>
+
+		<!-- Basic Button Variants -->
+		<div class="section">
+			<h2>1. Button Variants</h2>
+			<p>Different button styles for different use cases:</p>
+
+			<div class="button-group">
+				<custom-button data-value="PRIMARY" id="btn1" variant="primary">Primary Button</custom-button>
+				<custom-button variant="primary">Primary Button</custom-button>
+				<custom-button variant="secondary">Secondary Button</custom-button>
+				<custom-button variant="danger">Danger Button</custom-button>
+				<custom-button variant="success">Success Button</custom-button>
+				<custom-button variant="warning">Warning Button</custom-button>
+			</div>
+
+			<div class="code-block">
+				&lt;custom-button variant="primary"&gt;Primary Button&lt;/custom-button&gt;
+				&lt;custom-button variant="secondary"&gt;Secondary Button&lt;/custom-button&gt;
+				&lt;custom-button variant="danger"&gt;Danger Button&lt;/custom-button&gt;
+				&lt;custom-button variant="success"&gt;Success Button&lt;/custom-button&gt;
+				&lt;custom-button variant="warning"&gt;Warning Button&lt;/custom-button&gt;
+			</div>
+		</div>
+
+		<!-- Button Sizes -->
+		<div class="section">
+			<h2>2. Button Sizes</h2>
+			<p>Different sizes for different contexts:</p>
+
+			<div class="button-group vertical">
+				<custom-button variant="primary" size="small">Small Button</custom-button>
+				<custom-button variant="primary" size="medium">Medium Button (Default)</custom-button>
+				<custom-button variant="primary" size="large">Large Button</custom-button>
+			</div>
+
+			<div class="code-block">
+				&lt;custom-button variant="primary" size="small"&gt;Small Button&lt;/custom-button&gt;
+				&lt;custom-button variant="primary" size="medium"&gt;Medium Button&lt;/custom-button&gt;
+				&lt;custom-button variant="primary" size="large"&gt;Large Button&lt;/custom-button&gt;
+			</div>
+		</div>
+
+		<!-- Button States -->
+		<div class="section">
+			<h2>3. Button States</h2>
+			<p>Different states for user interaction:</p>
+
+			<div class="button-group">
+				<custom-button variant="primary">Normal</custom-button>
+				<custom-button variant="primary" disabled>Disabled</custom-button>
+				<custom-button variant="primary" loading>Loading</custom-button>
+			</div>
+
+			<div class="code-block">
+				&lt;custom-button variant="primary"&gt;Normal&lt;/custom-button&gt;
+				&lt;custom-button variant="primary" disabled&gt;Disabled&lt;/custom-button&gt;
+				&lt;custom-button variant="primary" loading&gt;Loading&lt;/custom-button&gt;
+			</div>
+		</div>
+
+		<!-- Interactive Demo -->
+		<div class="section">
+			<h2>4. Interactive Demo</h2>
+			<p>Try these interactive buttons:</p>
+
+			<div class="interactive-demo">
+				<div class="button-group">
+					<custom-button variant="primary" onclick="handleClick('Primary clicked!')">
+						Click Me!
+					</custom-button>
+
+					<custom-button variant="secondary" onclick="toggleLoading()" id="loading-btn">
+						Toggle Loading
+					</custom-button>
+
+					<custom-button variant="danger" onclick="toggleDisabled()" id="disabled-btn">
+						Toggle Disabled
+					</custom-button>
+				</div>
+
+				<div id="status" class="status" style="display: none;">
+					Status messages will appear here...
+				</div>
+			</div>
+
+			<div class="code-block">
+				&lt;custom-button
+				variant="primary"
+				onclick="handleClick('Primary clicked!')"
+				&gt;
+				Click Me!
+				&lt;/custom-button&gt;
+
+				&lt;custom-button
+				variant="secondary"
+				onclick="toggleLoading()"
+				id="loading-btn"
+				&gt;
+				Toggle Loading
+				&lt;/custom-button&gt;
+			</div>
+		</div>
+
+		<!-- Event Handling -->
+		<div class="section">
+			<h2>5. Event Handling</h2>
+			<p>Custom events and programmatic control:</p>
+
+			<div class="button-group">
+				<custom-button variant="success" id="event-btn" onclick="handleClick('Event button clicked!')">
+					Event Button
+				</custom-button>
+			</div>
+
+			<div class="code-block">
+				// Listen for custom events
+				document.getElementById('event-btn').addEventListener('button-click', (event) => {
+				console.log('Button clicked:', event.detail);
+				});
+
+				// Programmatic control
+				const button = document.getElementById('event-btn');
+				button.setLoading(true);
+				button.setDisabled(false);
+				button.setVariant('danger');
+			</div>
+		</div>
+
+		<!-- Form Integration -->
+		<div class="section">
+			<h2>6. Form Integration</h2>
+			<p>Buttons work seamlessly with forms:</p>
+
+			<form onsubmit="handleFormSubmit(event)">
+				<div style="margin-bottom: 1rem;">
+					<label for="name" style="display: block; margin-bottom: 0.5rem;">Name:</label>
+					<input type="text" id="name" name="name"
+						style="padding: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.375rem; width: 200px;"
+						required>
+				</div>
+
+				<div class="button-group">
+					<custom-button type="submit" variant="primary">Submit</custom-button>
+					<custom-button type="reset" variant="secondary">Reset</custom-button>
+				</div>
+			</form>
+
+			<div class="code-block">
+				&lt;form onsubmit="handleFormSubmit(event)"&gt;
+				&lt;input type="text" name="name" required&gt;
+				&lt;custom-button type="submit" variant="primary"&gt;Submit&lt;/custom-button&gt;
+				&lt;custom-button type="reset" variant="secondary"&gt;Reset&lt;/custom-button&gt;
+				&lt;/form&gt;
+			</div>
+		</div>
+
+		<!-- Accessibility -->
+		<div class="section">
+			<h2>7. Accessibility Features</h2>
+			<p>Built-in accessibility support:</p>
+
+			<ul>
+				<li>✅ Keyboard navigation (Tab, Enter, Space)</li>
+				<li>✅ ARIA attributes (aria-busy for loading state)</li>
+				<li>✅ Focus management</li>
+				<li>✅ Screen reader support</li>
+				<li>✅ Proper semantic HTML</li>
+			</ul>
+
+			<div class="button-group">
+				<custom-button variant="primary" tabindex="0">Focusable Button</custom-button>
+				<custom-button variant="secondary" disabled>Disabled Button</custom-button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Load the component -->
+	<script type="module" src="src/components/Button.js"></script>
+
+	<!-- Demo JavaScript -->
+	<script>
+		// Handle button clicks
+		function handleClick(message) {
+			showStatus(message);
+		}
+
+		// Toggle loading state
+		function toggleLoading() {
+			const btn = document.getElementById('loading-btn');
+			const isCurrentlyLoading = btn.hasAttribute('loading');
+
+			if (isCurrentlyLoading) {
+				btn.removeAttribute('loading');
+				btn.textContent = 'Toggle Loading';
+			} else {
+				btn.setAttribute('loading', '');
+				btn.textContent = '';
+			}
+		}
+
+		// Toggle disabled state
+		function toggleDisabled() {
+			const btn = document.getElementById('disabled-btn');
+
+			const isCurrentlyDisabled = btn.hasAttribute('disabled');
+
+			if (isCurrentlyDisabled) {
+				btn.removeAttribute('disabled');
+				btn.textContent = 'Toggle Disabled';
+			} else {
+				btn.setAttribute('disabled', '');
+				btn.textContent = 'Disabled';
+			}
+		}
+
+		// Handle form submission
+		function handleFormSubmit(event) {
+			event.preventDefault();
+			const formData = new FormData(event.target);
+			const name = formData.get('name');
+			showStatus(`Form submitted with name: ${name}`);
+		}
+
+		// Show status messages
+		function showStatus(message) {
+			const status = document.getElementById('status');
+			status.textContent = message;
+			status.style.display = 'block';
+
+			setTimeout(() => {
+				status.style.display = 'none';
+			}, 3000);
+		}
+
+		// Listen for custom events
+		document.addEventListener('button-click', (event) => {
+			console.log('Custom button clicked:', event.detail);
+		});
+
+		// Programmatic control example
+		document.addEventListener('DOMContentLoaded', () => {
+			const eventBtn = document.getElementById('event-btn');
+
+			// Example of programmatic control
+			setTimeout(() => {
+				eventBtn.setVariant('warning');
+				eventBtn.textContent = 'Changed to Warning!';
+			}, 2000);
+		});
+
+		const btn1 = document.querySelector("#btn1");
+		btn1.addEventListener("click", (event) => {
+			const value = btn1.dataset.value;
+			console.log(value);
+		}); 
+	</script>
+</body>
+
+</html>
